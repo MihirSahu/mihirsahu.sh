@@ -41,21 +41,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        {process.env.NODE_ENV === "development" && (
-          <>
-            <Script
-              src="//unpkg.com/react-grab/dist/index.global.js"
-              strategy="beforeInteractive"
-            />
-            <Script
-              src="//unpkg.com/@react-grab/claude-code/dist/client.global.js"
-              strategy="lazyOnload"
-            />
-          </>
-        )}
-      </head>
-      <body className={`${berkeleyMono.className} antialiased bg-[url('/texture.svg')] bg-repeat bg-[length:3px_3px]`}>{children}</body>
+      <body
+        className={`${berkeleyMono.className} antialiased bg-[url('/texture.svg')] bg-repeat bg-[length:3px_3px]`}
+      >
+        {children}
+      </body>
     </html>
   );
 }
