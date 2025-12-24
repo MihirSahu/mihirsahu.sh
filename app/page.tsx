@@ -270,18 +270,18 @@ export default function Home() {
             <Section title="Connect">
               <div className="flex flex-col space-y-5">
                 <div>
-                  The best way to contact me is at themihirsahu [at] gmail.com.
-                  You can also reach out via these channels:
+                  The best way to contact me is at mihir [at] mihirsahu.com. You
+                  can also reach out via these channels:
                 </div>
                 <div className="flex gap-6">
                   <SocialLink href="https://x.com/TheMihirSahu" label="X" />
                   <SocialLink
-                    href="https://github.com/mihirsahu"
-                    label="GitHub"
-                  />{" "}
-                  <SocialLink
                     href="https://www.linkedin.com/in/the-mihir-sahu/"
                     label="LinkedIn"
+                  />{" "}
+                  <SocialLink
+                    href="https://github.com/mihirsahu"
+                    label="GitHub"
                   />
                 </div>
               </div>
