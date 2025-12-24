@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+:root {
+    --background: #0a0a0a;
+    --foreground: #fafafa;
+    --gray-100: #171717;
+    --gray-200: #262626;
+    --gray-400: #737373;
+    --gray-500: #a3a3a3;
+    --gray-600: #d4d4d4;
+    --gray-900: #fafafa;
+}
+
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-gray-100: var(--gray-100);
+    --color-gray-200: var(--gray-200);
+    --color-gray-400: var(--gray-400);
+    --color-gray-500: var(--gray-500);
+    --color-gray-600: var(--gray-600);
+    --color-gray-900: var(--gray-900);
+    --font-sans: var(--font-berkeley-mono);
+    --font-mono: var(--font-berkeley-mono);
+}
+
+body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family:
+        var(--font-sans),
+        system-ui,
+        -apple-system,
+        sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+::selection {
+    background: rgba(115, 115, 115, 0.5);
+}
