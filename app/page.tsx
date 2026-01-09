@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useSection } from "./context/SectionContext";
 
 function ArrowIcon() {
   return (
@@ -172,158 +172,112 @@ function SocialLink({ href, label }: SocialLinkProps) {
 }
 
 export default function Home() {
-  const [currentSection, setCurrentSection] = useState("Home");
+  const { currentSection, setCurrentSection } = useSection();
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden">
-      <span className="absolute right-4.5 origin-bottom-left -translate-y-full translate-x-full rotate-90 bg-[var(--background)]">
-        [ {currentSection} ]
-      </span>
-      <div className="mx-auto flex max-w-6xl items-start justify-center gap-16 px-6 py-16 md:py-24">
-        <main className="w-full max-w-3xl">
-          <header className="mb-12">
-            <Link
-              href="/"
-              className="text-lg font-medium"
-              onClick={() => setCurrentSection("Home")}
-            >
-              [ Mihir Sahu ]
+    <>
+      {currentSection == "Today" && (
+        <Section title="Today">
+          <div className="space-y-5">
+            <p className="leading-relaxed text-gray-900">
+              I'm a builder, tinkerer, and learner. I find joy in coming across
+              new ideas, meeting exceptional people, and making an impact.
+            </p>
+            <p className="leading-relaxed text-gray-900">
+              I want to to help founders build well-crafted products that
+              inspire people and create companies that make an outsized impact
+              on the world.
+            </p>
+            <p className="leading-relaxed text-gray-900">
+              Currently, I build large-scale authentication systems at Visa.
+            </p>
+          </div>
+        </Section>
+      )}
+
+      {currentSection == "Works" && (
+        <Section title="Previous Work">
+          <div className="flex flex-col">
+            <PreviousWork
+              title="HCSS [Spring 2025]"
+              description="Built modern tools for the construction industry."
+            />
+            <PreviousWork
+              title="BidOut/Breaker19 [Internship] [Winter 2023]"
+              description="Built the Uber for oil & gas trucking."
+            />
+            <PreviousWork
+              title="Chevron [Internship] [Summer 2023-2024]"
+              description="2x internship for software engineering and project management."
+            />
+          </div>
+        </Section>
+      )}
+
+      {currentSection == "Thoughts" && (
+        <Section title="Thoughts">
+          <div className="flex flex-col">
+            <Link href="/agency">
+              [ Agency ]{" "}
+              <span className="text-center text-gray-600">Coming Soon</span>
             </Link>
-            <p className="text-gray-600">Software Engineer</p>
+          </div>
+        </Section>
+      )}
 
-            {currentSection != "Home" && (
-              <div className="flex flex-col md:flex-row justify-between pt-5">
-                <div
-                  className="cursor-pointer"
-                  onClick={() => setCurrentSection("Today")}
-                >
-                  [ Today ]
-                </div>
-                <div
-                  className="cursor-pointer"
-                  onClick={() => setCurrentSection("Works")}
-                >
-                  [ Works ]
-                </div>
-                <div
-                  className="cursor-pointer"
-                  onClick={() => setCurrentSection("Thoughts")}
-                >
-                  [ Thoughts ]
-                </div>
-                <div
-                  className="cursor-pointer"
-                  onClick={() => setCurrentSection("Contacts")}
-                >
-                  [ Contacts ]
-                </div>
-              </div>
-            )}
-          </header>
-
-          {currentSection == "Today" && (
-            <Section title="Today">
-              <div className="space-y-5">
-                <p className="leading-relaxed text-gray-900">
-                  I'm a builder, tinkerer, and learner. I find joy in coming
-                  across new ideas, meeting exceptional people, and making an
-                  impact.
-                </p>
-                <p className="leading-relaxed text-gray-900">
-                  I want to to help founders build well-crafted products that
-                  inspire people and create companies that make an outsized
-                  impact on the world.
-                </p>
-                <p className="leading-relaxed text-gray-900">
-                  Currently, I build large-scale authentication systems at Visa.
-                </p>
-              </div>
-            </Section>
-          )}
-
-          {currentSection == "Works" && (
-            <Section title="Previous Work">
-              <div className="flex flex-col">
-                <PreviousWork
-                  title="HCSS [Spring 2025]"
-                  description="Built modern tools for the construction industry."
-                />
-                <PreviousWork
-                  title="BidOut/Breaker19 [Internship] [Winter 2023]"
-                  description="Built the Uber for oil & gas trucking."
-                />
-                <PreviousWork
-                  title="Chevron [Internship] [Summer 2023-2024]"
-                  description="2x internship for software engineering and project management."
-                />
-              </div>
-            </Section>
-          )}
-
-          {currentSection == "Thoughts" && (
-            <Section title="Thoughts">
-              <div className="flex flex-col">[ In progress ]</div>
-            </Section>
-          )}
-
-          {currentSection == "Contacts" && (
-            <Section title="Connect">
-              <div className="flex flex-col space-y-5">
-                <div>
-                  The best way to contact me is at mihir [at] mihirsahu.com. You
-                  can also reach out via these channels:
-                </div>
-                <div className="flex gap-6">
-                  <SocialLink href="https://x.com/TheMihirSahu" label="X" />
-                  <SocialLink
-                    href="https://www.linkedin.com/in/the-mihir-sahu/"
-                    label="LinkedIn"
-                  />{" "}
-                  <SocialLink
-                    href="https://github.com/mihirsahu"
-                    label="GitHub"
-                  />
-                </div>
-              </div>
-            </Section>
-          )}
-
-          {currentSection == "Home" && (
-            <div className="sticky top-24 shrink-0 lg:block justify-self-center">
-              <Thinker className="h-[500px] w-auto text-foreground" />
-            </div>
-          )}
-
-          {currentSection == "Home" && (
+      {currentSection == "Contacts" && (
+        <Section title="Connect">
+          <div className="flex flex-col space-y-5">
             <div>
-              <div
-                className="cursor-pointer"
-                onClick={() => setCurrentSection("Today")}
-              >
-                [ Today ]
-              </div>
-              <div
-                className="cursor-pointer"
-                onClick={() => setCurrentSection("Works")}
-              >
-                [ Works ]
-              </div>
-              <div
-                className="cursor-pointer"
-                onClick={() => setCurrentSection("Thoughts")}
-              >
-                [ Thoughts ]
-              </div>
-              <div
-                className="cursor-pointer"
-                onClick={() => setCurrentSection("Contacts")}
-              >
-                [ Contacts ]
-              </div>
+              The best way to contact me is at mihir [at] mihirsahu.com. You can
+              also reach out via these channels:
             </div>
-          )}
-        </main>
-      </div>
-    </div>
+            <div className="flex gap-6">
+              <SocialLink href="https://x.com/TheMihirSahu" label="X" />
+              <SocialLink
+                href="https://www.linkedin.com/in/the-mihir-sahu/"
+                label="LinkedIn"
+              />{" "}
+              <SocialLink href="https://github.com/mihirsahu" label="GitHub" />
+            </div>
+          </div>
+        </Section>
+      )}
+
+      {currentSection == "Home" && (
+        <div className="sticky top-24 shrink-0 lg:block justify-self-center">
+          <Thinker className="h-[500px] w-auto text-foreground" />
+        </div>
+      )}
+
+      {currentSection == "Home" && (
+        <div>
+          <div
+            className="cursor-pointer"
+            onClick={() => setCurrentSection("Today")}
+          >
+            [ Today ]
+          </div>
+          <div
+            className="cursor-pointer"
+            onClick={() => setCurrentSection("Works")}
+          >
+            [ Works ]
+          </div>
+          <div
+            className="cursor-pointer"
+            onClick={() => setCurrentSection("Thoughts")}
+          >
+            [ Thoughts ]
+          </div>
+          <div
+            className="cursor-pointer"
+            onClick={() => setCurrentSection("Contacts")}
+          >
+            [ Contacts ]
+          </div>
+        </div>
+      )}
+    </>
   );
 }
