@@ -209,7 +209,7 @@ export default function Home() {
 
       {currentSection == "Companies" && <Companies />}
 
-      {currentSection == "Contact" && <Contacts />}
+      {currentSection == "Contacts" && <Contacts />}
 
       {currentSection == "Home" && (
         <div className="sticky top-24 shrink-0 lg:block justify-self-center">
