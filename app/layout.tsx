@@ -81,6 +81,12 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
                 </div>
                 <div
                   className="cursor-pointer"
+                  onClick={() => setCurrentSection("Library")}
+                >
+                  [ Library ]
+                </div>
+                <div
+                  className="cursor-pointer"
                   onClick={() => setCurrentSection("Companies")}
                 >
                   [ Companies ]

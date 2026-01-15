@@ -8,6 +8,7 @@ import Works from "./components/works";
 import Thoughts from "./components/thoughts";
 import Contacts from "./components/contacts";
 import Companies from "./components/companies";
+import Library from "./components/library";
 
 function Thinker({ className }: { className?: string }) {
   const { isIOSMobile, isMobile } = useDeviceDetect();
@@ -207,6 +208,8 @@ export default function Home() {
 
       {currentSection == "Thoughts" && <Thoughts />}
 
+      {currentSection == "Library" && <Library />}
+
       {currentSection == "Companies" && <Companies />}
 
       {currentSection == "Contacts" && <Contacts />}
@@ -236,6 +239,12 @@ export default function Home() {
             onClick={() => setCurrentSection("Thoughts")}
           >
             [ Thoughts ]
+          </div>
+          <div
+            className="cursor-pointer"
+            onClick={() => setCurrentSection("Library")}
+          >
+            [ Library ]
           </div>
           <div
             className="cursor-pointer"
