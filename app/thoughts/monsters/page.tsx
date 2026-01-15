@@ -1,6 +1,6 @@
 "use client";
 
-import { useDeviceDetect } from "../hooks/useDeviceDetect";
+import { useDeviceDetect } from "../../hooks/useDeviceDetect";
 
 const Monsters = () => {
   const { isIOSMobile, isMobile } = useDeviceDetect();
