@@ -25,7 +25,7 @@ const CompaniesTemplate = ({ name, description, url }: WorksProps) => {
 
 const Companies = () => {
   return (
-    <Section title="Companies/Products I'm keeping an eye on">
+    <Section title="Watchlist">
       <div className="flex flex-col">
         <CompaniesTemplate
           name="Granola"

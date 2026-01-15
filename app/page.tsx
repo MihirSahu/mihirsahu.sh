@@ -3,10 +3,8 @@
 import Link from "next/link";
 import { useSection } from "./context/SectionContext";
 import { useDeviceDetect } from "./hooks/useDeviceDetect";
-import Today from "./components/today";
-import Works from "./components/works";
+import About from "./components/about";
 import Thoughts from "./components/thoughts";
-import Contacts from "./components/contacts";
 import Companies from "./components/companies";
 import Library from "./components/library";
 
@@ -202,17 +200,13 @@ export default function Home() {
 
   return (
     <>
-      {currentSection == "Today" && <Today />}
-
-      {currentSection == "Works" && <Works />}
+      {currentSection == "About" && <About />}
 
       {currentSection == "Thoughts" && <Thoughts />}
 
       {currentSection == "Library" && <Library />}
 
       {currentSection == "Companies" && <Companies />}
-
-      {currentSection == "Contacts" && <Contacts />}
 
       {currentSection == "Home" && (
         <div className="sticky top-24 shrink-0 lg:block justify-self-center">
@@ -224,15 +218,9 @@ export default function Home() {
         <div>
           <div
             className="cursor-pointer"
-            onClick={() => setCurrentSection("Today")}
+            onClick={() => setCurrentSection("About")}
           >
-            [ Today ]
-          </div>
-          <div
-            className="cursor-pointer"
-            onClick={() => setCurrentSection("Works")}
-          >
-            [ Works ]
+            [ About ]
           </div>
           <div
             className="cursor-pointer"
@@ -251,12 +239,6 @@ export default function Home() {
             onClick={() => setCurrentSection("Companies")}
           >
             [ Companies ]
-          </div>
-          <div
-            className="cursor-pointer"
-            onClick={() => setCurrentSection("Contacts")}
-          >
-            [ Contacts ]
           </div>
         </div>
       )}
