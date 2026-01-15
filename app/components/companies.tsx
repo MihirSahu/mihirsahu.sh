@@ -9,15 +9,17 @@ interface WorksProps {
 
 const CompaniesTemplate = ({ name, description, url }: WorksProps) => {
   return (
-    <div
+    <a
       rel="noopener noreferrer"
       className="-mx-3 flex flex-col rounded-lg px-3 py-3 transition-colors hover:bg-gray-100/60"
+      href={url}
+      target="_blank"
     >
-      <a className="font-medium" href={url} target="_blank">
+      <div className="font-medium">
         {name} <ArrowIcon />
-      </a>
+      </div>
       <span className="text-gray-600">{description}</span>
-    </div>
+    </a>
   );
 };
 
