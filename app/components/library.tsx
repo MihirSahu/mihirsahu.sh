@@ -104,7 +104,7 @@ function BookCard({ book }: { book: Book }) {
           </div>
         )}
       </div>
-      <div className="mt-2 md:opacity-0 md:transition-opacity md:duration-200 md:group-hover:opacity-100">
+      <div className="mt-2">
         <p className="line-clamp-2 text-sm text-foreground">{book.title}</p>
         <p className="text-xs text-gray-400">{book.author}</p>
       </div>
