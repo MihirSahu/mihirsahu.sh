@@ -6,7 +6,7 @@ import { useDeviceDetect } from "./hooks/useDeviceDetect";
 import About from "./components/about";
 import Thoughts from "./components/thoughts";
 import Companies from "./components/companies";
-import Library from "./components/library";
+// import Library from "./components/library";
 
 function Thinker({ className }: { className?: string }) {
   const { isIOSMobile, isMobile } = useDeviceDetect();
@@ -204,7 +204,7 @@ export default function Home() {
 
       {currentSection == "Thoughts" && <Thoughts />}
 
-      {currentSection == "Library" && <Library />}
+      {/* {currentSection == "Library" && <Library />} */}
 
       {currentSection == "Companies" && <Companies />}
 
@@ -228,12 +228,12 @@ export default function Home() {
           >
             [ Thoughts ]
           </div>
-          <div
+          {/* <div
             className="cursor-pointer"
             onClick={() => setCurrentSection("Library")}
           >
             [ Library ]
-          </div>
+          </div> */}
           <div
             className="cursor-pointer"
             onClick={() => setCurrentSection("Companies")}
