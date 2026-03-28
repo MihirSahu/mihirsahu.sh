@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Home from "./components/home";
 import {
+  buildSiteUrl,
   siteDescription,
   siteName,
   siteUrl,
@@ -14,6 +15,9 @@ export const metadata: Metadata = {
   description: siteDescription,
   alternates: {
     canonical: homeUrl,
+    types: {
+      "application/rss+xml": buildSiteUrl("/rss.xml"),
+    },
   },
   openGraph: {
     url: homeUrl,

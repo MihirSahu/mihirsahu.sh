@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { thoughts } from "../thoughts/thoughts-data";
 import Section from "./section";
 
 interface ThoughtsProps {
@@ -25,16 +26,14 @@ const Thoughts = () => {
   return (
     <Section title="Thoughts">
       <div className="flex flex-col">
-        <ThoughtsTemplate
-          title="Agency"
-          href="/thoughts/agency"
-          published={false}
-        />
-        <ThoughtsTemplate
-          title="Monsters"
-          href="/thoughts/monsters"
-          published={false}
-        />
+        {thoughts.map((thought) => (
+          <ThoughtsTemplate
+            key={thought.slug}
+            title={thought.title}
+            href={thought.href}
+            published={thought.published}
+          />
+        ))}
       </div>
     </Section>
   );

@@ -3,7 +3,13 @@ import localFont from "next/font/local";
 import type { ReactNode } from "react";
 import SiteShell from "./components/site-shell";
 import "./globals.css";
-import { siteDescription, siteName, siteUrl, twitterHandle } from "./site-metadata";
+import {
+  buildSiteUrl,
+  siteDescription,
+  siteName,
+  siteUrl,
+  twitterHandle,
+} from "./site-metadata";
 
 const berkeleyMono = localFont({
   src: [
@@ -38,6 +44,11 @@ export const metadata: Metadata = {
     template: `%s | ${siteName}`,
   },
   description: siteDescription,
+  alternates: {
+    types: {
+      "application/rss+xml": buildSiteUrl("/rss.xml"),
+    },
+  },
   openGraph: {
     type: "website",
     siteName,
