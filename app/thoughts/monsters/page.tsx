@@ -82,12 +82,12 @@ const Monsters = () => {
   const monsterLinesiOS = monsterArtIOS.split("\n");
 
   return (
-    <div className="sticky top-24 shrink-0 lg:block justify-self-center">
+    <div className="sticky top-24 w-full max-w-full justify-self-center px-4 md:w-auto md:max-w-none md:px-0 md:shrink-0 lg:block">
       {/* iOS Mobile */}
       {isIOSMobile && (
         <svg
           viewBox="0 0 2200 1400"
-          className="h-[500px] w-auto text-foreground"
+          className="mx-auto h-auto w-full max-w-md text-foreground"
           aria-label="Monster"
         >
           <text
@@ -115,7 +115,7 @@ const Monsters = () => {
       {isMobile && !isIOSMobile && (
         <svg
           viewBox="0 0 2500 1400"
-          className="h-[500px] w-auto text-foreground"
+          className="mx-auto h-auto w-full max-w-md text-foreground"
           aria-label="Monster"
         >
           <text
@@ -166,8 +166,8 @@ const Monsters = () => {
           </text>
         </svg>
       )}
-      <div className="text-center">[ Monsters ]</div>
-      <div className="text-center text-gray-600">
+      <div className="mt-2 text-center">[ Monsters ]</div>
+      <div className="mx-auto max-w-[34ch] text-center text-gray-600">
         <i>
           Is every moment, second, minute and day of yours really doing anything
           for you to get closer to becoming the best?

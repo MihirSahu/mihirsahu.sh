@@ -13,7 +13,7 @@ function ExternalLink({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center whitespace-nowrap text-gray-600 transition-colors hover:text-foreground"
+      className="text-gray-600 transition-colors hover:text-foreground"
     >
       {children}
       <ArrowIcon />
