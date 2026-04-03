@@ -108,6 +108,12 @@ function LayoutContent({ children }: { children: ReactNode }) {
                 >
                   [ Thoughts ]
                 </div>
+                <div
+                  className="cursor-pointer"
+                  onClick={() => setCurrentSection("Side Quests")}
+                >
+                  [ Side Quests ]
+                </div>
                 {/* <div
                   className="cursor-pointer"
                   onClick={() => setCurrentSection("Library")}
@@ -116,9 +122,9 @@ function LayoutContent({ children }: { children: ReactNode }) {
                 </div> */}
                 <div
                   className="cursor-pointer"
-                  onClick={() => setCurrentSection("Companies")}
+                  onClick={() => setCurrentSection("Watchlist")}
                 >
-                  [ Companies ]
+                  [ Watchlist ]
                 </div>
               </div>
             )}
