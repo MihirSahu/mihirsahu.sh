@@ -23,7 +23,6 @@ function ExternalLink({
 
 const currently = [
   "Reading through a lot of codebases and learning how to build harnesses",
-  "Learning how to dance (bachata, salsa)",
 ];
 
 const SideQuests = () => {
