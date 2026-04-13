@@ -1,4 +1,5 @@
 import Section from "./section";
+import SideQuests from "./side-quests";
 
 interface WorksProps {
   title: string;
@@ -34,7 +35,9 @@ const About = () => {
         </div>
       </Section>
 
-      <Section title="Previously">
+      <SideQuests />
+
+      <Section title="Previous Work">
         <div className="space-y-5 mb-8">
           <WorksTemplate
             title="HCSS [Spring 2025]"

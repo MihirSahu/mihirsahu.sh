@@ -3,8 +3,8 @@
 import { useSection } from "../context/SectionContext";
 import { useDeviceDetect } from "../hooks/useDeviceDetect";
 import About from "./about";
+import Builds from "./builds";
 import Companies from "./companies";
-import SideQuests from "./side-quests";
 import Thoughts from "./thoughts";
 // import Library from "./library";
 
@@ -200,11 +200,11 @@ export default function Home() {
 
       {currentSection === "Thoughts" && <Thoughts />}
 
+      {currentSection === "Builds" && <Builds />}
+
       {/* {currentSection === "Library" && <Library />} */}
 
-      {currentSection === "Side Quests" && <SideQuests />}
-
-      {currentSection === "Watchlist" && <Companies />}
+      {currentSection === "Tools" && <Companies />}
 
       {currentSection === "Home" && (
         <div
@@ -231,9 +231,9 @@ export default function Home() {
           </div>
           <div
             className="cursor-pointer"
-            onClick={() => setCurrentSection("Side Quests")}
+            onClick={() => setCurrentSection("Builds")}
           >
-            [ Side Quests ]
+            [ Builds ]
           </div>
           {/* <div
             className="cursor-pointer"
@@ -243,9 +243,9 @@ export default function Home() {
           </div> */}
           <div
             className="cursor-pointer"
-            onClick={() => setCurrentSection("Watchlist")}
+            onClick={() => setCurrentSection("Tools")}
           >
-            [ Watchlist ]
+            [ Tools ]
           </div>
         </div>
       )}
