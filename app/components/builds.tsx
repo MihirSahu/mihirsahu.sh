@@ -28,6 +28,11 @@ const Builds = () => {
     <Section title="Builds">
       <div className="flex flex-col">
         <BuildTemplate
+          name="Daily Schedule Checklist"
+          description="Daily routine tracker with schedule types, streaks, and Obsidian export"
+          url="https://agenda-showcase.mihirsahu.sh/"
+        />
+        <BuildTemplate
           name="Claude Export"
           description="Export Claude Conversations"
           url="https://claude-export.mihirsahu.sh/"
