@@ -37,6 +37,11 @@ const Builds = () => {
           description="Export Claude Conversations"
           url="https://claude-export.mihirsahu.sh/"
         />
+        <BuildTemplate
+          name="Linear Calendar Webhook"
+          description="Webhook showcase for syncing Linear issues to a calendar"
+          url="https://linear-calendar-webhook-showcase.mihirsahu.sh/"
+        />
       </div>
     </Section>
   );
