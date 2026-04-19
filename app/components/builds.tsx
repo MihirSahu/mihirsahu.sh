@@ -28,7 +28,7 @@ const Builds = () => {
     <Section title="Builds">
       <div className="flex flex-col">
         <BuildTemplate
-          name="Lattice Showcase"
+          name="Lattice"
           description="Web UI for grounded retrieval over an S3-backed Obsidian vault"
           url="https://lattice-showcase.mihirsahu.sh/"
         />
