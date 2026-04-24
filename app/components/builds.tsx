@@ -43,6 +43,11 @@ const Builds = () => {
           url="https://claude-export.mihirsahu.sh/"
         />
         <BuildTemplate
+          name="IRC GPT"
+          description="A Y2K-inspired, IRC-shaped desktop chat client for local-first AI conversations"
+          url="https://irc-gpt-showcase.mihirsahu.sh/"
+        />
+        <BuildTemplate
           name="Linear Calendar Webhook"
           description="Webhook showcase for syncing Linear issues to a calendar"
           url="https://linear-calendar-webhook-showcase.mihirsahu.sh/"
