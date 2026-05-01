@@ -143,7 +143,7 @@ const Monsters = () => {
       {!isMobile && (
         <svg
           viewBox="0 0 2500 1400"
-          className="h-[500px] w-auto text-foreground"
+          className="mx-auto h-[500px] w-auto text-foreground"
           aria-label="Monster"
         >
           <text
@@ -166,8 +166,8 @@ const Monsters = () => {
           </text>
         </svg>
       )}
-      <div className="mt-2 text-center">[ Monsters ]</div>
-      <div className="mx-auto max-w-[34ch] text-center text-gray-600">
+      <div className="mt-2">[ Monsters ]</div>
+      <div className="max-w-[34ch] text-gray-600">
         <i>
           Is every moment, second, minute and day of yours really doing anything
           for you to get closer to becoming the best?

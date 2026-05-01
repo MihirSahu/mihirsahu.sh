@@ -108,12 +108,12 @@ const Agency = () => {
   const appleLinesiOS = appleArtIOS.split("\n");
 
   return (
-    <div className="sticky top-24 shrink-0 lg:block justify-self-center">
+    <div className="sticky top-24 w-full max-w-3xl shrink-0 justify-self-center lg:block">
       {/* iOS Mobile */}
       {isIOSMobile && (
         <svg
           viewBox="0 0 1400 1800"
-          className="h-[500px] w-auto text-foreground"
+          className="mx-auto h-[500px] max-w-full text-foreground"
           aria-label="Hand picking an apple"
         >
           <text
@@ -138,7 +138,7 @@ const Agency = () => {
       {isMobile && !isIOSMobile && (
         <svg
           viewBox="0 0 1740 1800"
-          className="h-[500px] w-auto text-foreground"
+          className="mx-auto h-[500px] max-w-full text-foreground"
           aria-label="Hand picking an apple"
         >
           <text
@@ -163,7 +163,7 @@ const Agency = () => {
       {!isMobile && (
         <svg
           viewBox="0 0 1740 1800"
-          className="h-[500px] w-auto text-foreground"
+          className="mx-auto h-[500px] w-auto text-foreground"
           aria-label="Hand picking an apple"
         >
           <text
@@ -183,8 +183,8 @@ const Agency = () => {
           </text>
         </svg>
       )}
-      <div className="text-center">[ Agency ]</div>
-      <div className="text-center text-gray-600">
+      <div>[ Agency ]</div>
+      <div className="text-gray-600">
         <i>You can just do things</i>
       </div>
     </div>
