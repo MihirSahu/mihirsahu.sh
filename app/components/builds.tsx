@@ -38,6 +38,11 @@ const Builds = () => {
           url="https://agenda-showcase.mihirsahu.sh/"
         />
         <BuildTemplate
+          name="Chat Minimap"
+          description="React library for turn-aware navigation in long AI chats"
+          url="https://chat-minimap.vercel.app/"
+        />
+        <BuildTemplate
           name="Claude Export"
           description="Export Claude Conversations"
           url="https://claude-export.mihirsahu.sh/"
