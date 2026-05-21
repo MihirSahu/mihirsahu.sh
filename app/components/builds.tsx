@@ -37,27 +37,32 @@ const Builds = () => {
       <div className="flex flex-col">
         <BuildTemplate
           name="Mnemonic"
-          description="Self-hosted, Markdown-backed MCP memory server for sharing durable context across AI apps."
+          description="Self-hosted, Markdown-backed MCP memory server for sharing durable context across AI apps"
           url="https://github.com/MihirSahu/Mnemonic"
           status="In Progress"
         />
         <BuildTemplate
           name="LocalBird"
-          description="Native macOS utility that captures local screen context, runs OCR, and generates daily routine packets."
+          description="Native macOS utility that captures local screen context, runs OCR, and generates daily routine packets"
           url="https://github.com/MihirSahu/LocalBird"
           status="In Progress"
         />
         <BuildTemplate
           name="Petal"
-          description="Native iOS prototype for a private two-person notes app with SwiftUI, Firebase, widgets, and haptics."
+          description="Native iOS prototype for a private two-person notes app with SwiftUI, Firebase, widgets, and haptics"
           url="https://github.com/MihirSahu/petal"
           status="In Progress"
         />
         <BuildTemplate
           name="Foundry"
-          description="Turns vague ideas into PRDs, build plans, starter repos, and coding-agent handoffs."
+          description="Turns vague ideas into PRDs, build plans, starter repos, and coding-agent handoffs"
           url="https://github.com/MihirSahu/foundry"
           status="In Progress"
+        />
+        <BuildTemplate
+          name="Conduit"
+          description="TypeScript workspace for calling the Codex backend with a ChatGPT Plus or Pro subscription"
+          url="https://github.com/MihirSahu/conduit"
         />
         <BuildTemplate
           name="Lattice"
@@ -76,7 +81,7 @@ const Builds = () => {
         />
         <BuildTemplate
           name="Claude Export"
-          description="Export Claude Conversations"
+          description="Export Claude conversations"
           url="https://claude-export.mihirsahu.sh/"
         />
         <BuildTemplate
