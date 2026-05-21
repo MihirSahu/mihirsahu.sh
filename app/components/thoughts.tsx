@@ -16,7 +16,9 @@ function ThoughtsTemplate({ href, title, published }: ThoughtsProps) {
     >
       [ {title} ]{" "}
       {!published && (
-        <span className="text-center text-gray-600">Coming Soon</span>
+        <span className="rounded border border-gray-400/40 px-1.5 py-0.5 text-[10px] font-normal uppercase leading-none text-gray-500">
+          In Progress
+        </span>
       )}
     </Link>
   );
