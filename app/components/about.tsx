@@ -21,7 +21,7 @@ const About = () => {
       <Section title="About">
         <div className="space-y-5 mb-8">
           <p className="leading-relaxed text-gray-900">
-            I'm a builder, tinkerer, and learner. I find joy in coming across
+            I&apos;m a builder, tinkerer, and learner. I find joy in coming across
             new ideas, meeting exceptional people, and making an impact.
           </p>
           <p className="leading-relaxed text-gray-900">

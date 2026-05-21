@@ -5,9 +5,10 @@ interface BuildProps {
   name: string;
   description: string;
   url: string;
+  status?: string;
 }
 
-const BuildTemplate = ({ name, description, url }: BuildProps) => {
+const BuildTemplate = ({ name, description, url, status }: BuildProps) => {
   return (
     <a
       rel="noopener noreferrer"
@@ -15,8 +16,15 @@ const BuildTemplate = ({ name, description, url }: BuildProps) => {
       href={url}
       target="_blank"
     >
-      <div className="font-medium">
-        {name} <ArrowIcon />
+      <div className="flex flex-wrap items-center gap-x-2 gap-y-1 font-medium">
+        <span>
+          {name} <ArrowIcon />
+        </span>
+        {status && (
+          <span className="rounded border border-gray-400/40 px-1.5 py-0.5 text-[10px] font-normal uppercase leading-none text-gray-500">
+            {status}
+          </span>
+        )}
       </div>
       <span className="text-gray-600">{description}</span>
     </a>
@@ -27,6 +35,30 @@ const Builds = () => {
   return (
     <Section title="Builds">
       <div className="flex flex-col">
+        <BuildTemplate
+          name="Mnemonic"
+          description="Self-hosted, Markdown-backed MCP memory server for sharing durable context across AI apps."
+          url="https://github.com/MihirSahu/Mnemonic"
+          status="In Progress"
+        />
+        <BuildTemplate
+          name="LocalBird"
+          description="Native macOS utility that captures local screen context, runs OCR, and generates daily routine packets."
+          url="https://github.com/MihirSahu/LocalBird"
+          status="In Progress"
+        />
+        <BuildTemplate
+          name="Petal"
+          description="Native iOS prototype for a private two-person notes app with SwiftUI, Firebase, widgets, and haptics."
+          url="https://github.com/MihirSahu/petal"
+          status="In Progress"
+        />
+        <BuildTemplate
+          name="Foundry"
+          description="Turns vague ideas into PRDs, build plans, starter repos, and coding-agent handoffs."
+          url="https://github.com/MihirSahu/foundry"
+          status="In Progress"
+        />
         <BuildTemplate
           name="Lattice"
           description="Web UI for grounded retrieval over an S3-backed Obsidian vault"
