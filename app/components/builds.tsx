@@ -42,6 +42,12 @@ const Builds = () => {
           status="In Progress"
         />
         <BuildTemplate
+          name="FounderBench"
+          description="Benchmark for evaluating AI agents on founder-style startup workflows"
+          url="https://github.com/MihirSahu/FounderBench"
+          status="In Progress"
+        />
+        <BuildTemplate
           name="LocalBird"
           description="Native macOS utility that captures local screen context, runs OCR, and generates daily routine packets"
           url="https://github.com/MihirSahu/LocalBird"
