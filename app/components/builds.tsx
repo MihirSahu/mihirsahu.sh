@@ -39,7 +39,6 @@ const Builds = () => {
           name="Mnemonic"
           description="Self-hosted, Markdown-backed MCP memory server for sharing durable context across AI apps"
           url="https://github.com/MihirSahu/Mnemonic"
-          status="In Progress"
         />
         <BuildTemplate
           name="FounderBench"
