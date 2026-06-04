@@ -4,21 +4,16 @@ import ArrowIcon from "./arrow";
 interface BuildProps {
   name: string;
   description: string;
-  url: string;
+  url?: string;
   status?: string;
 }
 
 const BuildTemplate = ({ name, description, url, status }: BuildProps) => {
-  return (
-    <a
-      rel="noopener noreferrer"
-      className="-mx-3 flex flex-col rounded-lg px-3 py-3 transition-colors hover:bg-gray-100/60"
-      href={url}
-      target="_blank"
-    >
+  const content = (
+    <>
       <div className="flex flex-wrap items-center gap-x-2 gap-y-1 font-medium">
         <span>
-          {name} <ArrowIcon />
+          {name} {url && <ArrowIcon />}
         </span>
         {status && (
           <span className="rounded border border-gray-400/40 px-1.5 py-0.5 text-[10px] font-normal uppercase leading-none text-gray-500">
@@ -27,6 +22,25 @@ const BuildTemplate = ({ name, description, url, status }: BuildProps) => {
         )}
       </div>
       <span className="text-gray-600">{description}</span>
+    </>
+  );
+
+  if (!url) {
+    return (
+      <div className="-mx-3 flex flex-col rounded-lg px-3 py-3">
+        {content}
+      </div>
+    );
+  }
+
+  return (
+    <a
+      rel="noopener noreferrer"
+      className="-mx-3 flex flex-col rounded-lg px-3 py-3 transition-colors hover:bg-gray-100/60"
+      href={url}
+      target="_blank"
+    >
+      {content}
     </a>
   );
 };
@@ -36,9 +50,15 @@ const Builds = () => {
     <Section title="Builds">
       <div className="flex flex-col">
         <BuildTemplate
-          name="Mnemonic"
-          description="Self-hosted, Markdown-backed MCP memory server for sharing durable context across AI apps"
-          url="https://github.com/MihirSahu/Mnemonic"
+          name="Keysmith for YubiKey"
+          description="Local-first desktop client for inspecting and configuring YubiKeys with a modern developer-tool feel"
+          url="https://github.com/MihirSahu/Keysmith"
+          status="In Progress"
+        />
+        <BuildTemplate
+          name="PokeScout"
+          description="Local-first dashboard and agent for tracking Pokemon TCG sealed product availability and purchase rules"
+          status="In Progress"
         />
         <BuildTemplate
           name="FounderBench"
@@ -63,6 +83,11 @@ const Builds = () => {
           description="Turns vague ideas into PRDs, build plans, starter repos, and coding-agent handoffs"
           url="https://github.com/MihirSahu/foundry"
           status="In Progress"
+        />
+        <BuildTemplate
+          name="Mnemonic"
+          description="Self-hosted, Markdown-backed MCP memory server for sharing durable context across AI apps"
+          url="https://github.com/MihirSahu/Mnemonic"
         />
         <BuildTemplate
           name="Conduit"
