@@ -79,12 +79,6 @@ const Builds = () => {
           status="In Progress"
         />
         <BuildTemplate
-          name="Foundry"
-          description="Turns vague ideas into PRDs, build plans, starter repos, and coding-agent handoffs"
-          url="https://github.com/MihirSahu/foundry"
-          status="In Progress"
-        />
-        <BuildTemplate
           name="Mnemonic"
           description="Self-hosted, Markdown-backed MCP memory server for sharing durable context across AI apps"
           url="https://github.com/MihirSahu/Mnemonic"
