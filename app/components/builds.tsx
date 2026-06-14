@@ -27,9 +27,7 @@ const BuildTemplate = ({ name, description, url, status }: BuildProps) => {
 
   if (!url) {
     return (
-      <div className="-mx-3 flex flex-col rounded-lg px-3 py-3">
-        {content}
-      </div>
+      <div className="-mx-3 flex flex-col rounded-lg px-3 py-3">{content}</div>
     );
   }
 
@@ -77,6 +75,12 @@ const Builds = () => {
           description="Native iOS prototype for a private two-person notes app with SwiftUI, Firebase, widgets, and haptics"
           url="https://github.com/MihirSahu/petal"
           status="In Progress"
+        />
+        <BuildTemplate
+          name="Latia"
+          description="Side-panel Chrome extension for asking questions about the current page with any OpenAI-compatible model endpoint"
+          url="https://github.com/MihirSahu/Latia"
+          status="MVP"
         />
         <BuildTemplate
           name="Mnemonic"
