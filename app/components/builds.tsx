@@ -77,10 +77,14 @@ const Builds = () => {
           status="In Progress"
         />
         <BuildTemplate
+          name="Ledger"
+          description="Native iOS daily note app with local-first Markdown notes and manual sync to a private S3 bucket"
+          url="https://github.com/MihirSahu/Ledger"
+        />
+        <BuildTemplate
           name="Latia"
           description="Side-panel Chrome extension for asking questions about the current page with any OpenAI-compatible model endpoint"
           url="https://github.com/MihirSahu/Latia"
-          status="MVP"
         />
         <BuildTemplate
           name="Mnemonic"
