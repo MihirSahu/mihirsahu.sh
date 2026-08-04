@@ -48,33 +48,8 @@ const Builds = () => {
     <Section title="Builds">
       <div className="flex flex-col">
         <BuildTemplate
-          name="Keysmith for YubiKey"
-          description="Local-first desktop client for inspecting and configuring YubiKeys with a modern developer-tool feel"
-          url="https://github.com/MihirSahu/Keysmith"
-          status="In Progress"
-        />
-        <BuildTemplate
-          name="PokeScout"
-          description="Local-first dashboard and agent for tracking Pokemon TCG sealed product availability and purchase rules"
-          status="In Progress"
-        />
-        <BuildTemplate
-          name="FounderBench"
-          description="Benchmark for evaluating AI agents on founder-style startup workflows"
-          url="https://github.com/MihirSahu/FounderBench"
-          status="In Progress"
-        />
-        <BuildTemplate
-          name="LocalBird"
-          description="Native macOS utility that captures local screen context, runs OCR, and generates daily routine packets"
-          url="https://github.com/MihirSahu/LocalBird"
-          status="In Progress"
-        />
-        <BuildTemplate
-          name="Petal"
-          description="Native iOS prototype for a private two-person notes app with SwiftUI, Firebase, widgets, and haptics"
-          url="https://github.com/MihirSahu/petal"
-          status="In Progress"
+          name="Cherbi"
+          description="Native iPhone AI recipe journal that turns messy cooking notes into structured recipes with generated watercolor art"
         />
         <BuildTemplate
           name="Ledger"
