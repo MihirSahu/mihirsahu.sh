@@ -48,6 +48,11 @@ const Builds = () => {
     <Section title="Builds">
       <div className="flex flex-col">
         <BuildTemplate
+          name="Cardverse"
+          description="Browse popular US credit cards and compare rewards, fees, and terms"
+          url="https://cardverse.mihirsahu.sh/"
+        />
+        <BuildTemplate
           name="Cherbi"
           description="Native iPhone AI recipe journal that turns messy cooking notes into structured recipes with generated watercolor art"
         />
