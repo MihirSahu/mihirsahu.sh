@@ -57,6 +57,11 @@ const Builds = () => {
           description="Native iPhone AI recipe journal that turns messy cooking notes into structured recipes with generated watercolor art"
         />
         <BuildTemplate
+          name="Slayjal's Portfolio"
+          description="Portfolio for Sejal “Slayjal” Jain, a dancer, model, and DJ"
+          url="https://www.slayjal.com/"
+        />
+        <BuildTemplate
           name="Ledger"
           description="Native iOS daily note app with local-first Markdown notes and manual sync to a private S3 bucket"
           url="https://github.com/MihirSahu/Ledger"
