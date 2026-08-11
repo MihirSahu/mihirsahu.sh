@@ -56,13 +56,6 @@ const SideQuests = () => {
           <h3 className="mb-3 text-sm font-semibold text-gray-700">Previously</h3>
           <ul className="list-disc space-y-3 pl-5 text-gray-900">
             <li className="leading-relaxed">
-              Beta tested the{" "}
-              <ExternalLink href="https://www.granola.ai/">
-                Granola
-              </ExternalLink>{" "}
-              iOS app before launch
-            </li>
-            <li className="leading-relaxed">
               Got funding for a{" "}
               <ExternalLink href="https://unison.so/">
                 personal CRM
