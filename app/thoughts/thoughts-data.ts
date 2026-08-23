@@ -26,21 +26,6 @@ export const thoughts: ReadonlyArray<ThoughtEntry> = [
     published: true,
     publishedAt: "2026-05-01",
   },
-  {
-    slug: "agency",
-    href: "/thoughts/agency",
-    title: "Agency",
-    description: "You can just do things",
-    published: false,
-  },
-  {
-    slug: "monsters",
-    href: "/thoughts/monsters",
-    title: "Monsters",
-    description:
-      "Is every moment, second, minute and day of yours really doing anything for you to get closer to becoming the best?",
-    published: false,
-  },
 ];
 
 export function getPublishedThoughts(): PublishedThoughtEntry[] {
