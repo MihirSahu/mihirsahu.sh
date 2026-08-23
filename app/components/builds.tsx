@@ -53,6 +53,11 @@ const Builds = () => {
           url="https://cardverse.mihirsahu.sh/"
         />
         <BuildTemplate
+          name="Acquired Case Carveouts"
+          description="Local, transcript-grounded question-answering application built from the Acquired archive"
+          url="https://acquired-case-carveouts.mihirsahu.sh/"
+        />
+        <BuildTemplate
           name="Cherbi"
           description="Native iPhone AI recipe journal that turns messy cooking notes into structured recipes with generated watercolor art"
         />
