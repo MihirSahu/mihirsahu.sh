@@ -48,13 +48,18 @@ const Builds = () => {
     <Section title="Builds">
       <div className="flex flex-col">
         <BuildTemplate
+          name="Weaver"
+          description="Chrome extension for turning X posts into Codex-built local projects"
+          url="https://github.com/MihirSahu/Weaver"
+        />
+        <BuildTemplate
           name="Cardverse"
           description="Browse popular US credit cards and compare rewards, fees, and terms"
           url="https://cardverse.mihirsahu.sh/"
         />
         <BuildTemplate
           name="Acquired Case Carveouts"
-          description="Local, transcript-grounded question-answering application built from the Acquired archive"
+          description="Question answering with embeddings, grounded in transcripts from the Acquired podcast archive"
           url="https://acquired-case-carveouts.mihirsahu.sh/"
         />
         <BuildTemplate
