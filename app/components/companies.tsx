@@ -33,16 +33,6 @@ const Companies = () => {
           url="https://www.granola.ai/"
         />
         <CompaniesTemplate
-          name="Exa"
-          description="Search Built for AI"
-          url="https://exa.ai/"
-        />
-        <CompaniesTemplate
-          name="Wispr Flow"
-          description="AI-based Voice-to-Text"
-          url="https://wisprflow.ai/"
-        />
-        <CompaniesTemplate
           name="Zed"
           description="Minimal Code Editor"
           url="https://zed.dev/"
@@ -51,16 +41,6 @@ const Companies = () => {
           name="Obsidian"
           description="Note Taking Tool"
           url="https://obsidian.md/"
-        />
-        <CompaniesTemplate
-          name="Conductor"
-          description="Orchestration Tool for Coding Agents"
-          url="https://conductor.build/"
-        />
-        <CompaniesTemplate
-          name="Lazy"
-          description="Capture Tool for Knowledge"
-          url="https://lazy.so/"
         />
         <CompaniesTemplate
           name="Copilot Money"
@@ -78,9 +58,29 @@ const Companies = () => {
           url="https://flighty.com/"
         />
         <CompaniesTemplate
-          name="BrowserBase"
-          description="Web Browser for AI Agents"
-          url="https://www.browserbase.com/"
+          name="Codex"
+          description="AI Coding Agent"
+          url="https://chatgpt.com/codex/"
+        />
+        <CompaniesTemplate
+          name="Coast"
+          description="Local Memory for Your Computer"
+          url="https://coast.app/"
+        />
+        <CompaniesTemplate
+          name="Handy"
+          description="Local Speech-to-Text"
+          url="https://handy.computer/"
+        />
+        <CompaniesTemplate
+          name="Paper"
+          description="Canvas for Product Design"
+          url="https://paper.design/"
+        />
+        <CompaniesTemplate
+          name="Mobbin"
+          description="Mobile Design Reference Library"
+          url="https://mobbin.com/discover/apps/ios/latest"
         />
       </div>
     </Section>
