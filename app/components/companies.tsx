@@ -63,6 +63,11 @@ const Companies = () => {
           url="https://chatgpt.com/codex/"
         />
         <CompaniesTemplate
+          name="Grok Bot"
+          description="Always-On AI Teammates"
+          url="https://x.ai/bot"
+        />
+        <CompaniesTemplate
           name="Coast"
           description="Local Memory for Your Computer"
           url="https://coast.app/"

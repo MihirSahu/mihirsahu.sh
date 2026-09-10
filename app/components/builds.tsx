@@ -48,6 +48,11 @@ const Builds = () => {
     <Section title="Builds">
       <div className="flex flex-col">
         <BuildTemplate
+          name="Grok Vault"
+          description="Browser-authenticated macOS CLI for archiving Grok Bot conversations to Markdown for Obsidian"
+          url="https://github.com/MihirSahu/grok-bot-export"
+        />
+        <BuildTemplate
           name="Weaver"
           description="Chrome extension for turning X posts into Codex-built local projects"
           url="https://github.com/MihirSahu/Weaver"
