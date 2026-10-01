@@ -39,3 +39,18 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Generated animation exports and local previews
+/artifacts/thinker-apple/animation.json
+/artifacts/thinker-apple/thinker-apple.asciimtn
+/artifacts/thinker-apple/*.png
+/artifacts/thinker-apple/preview.html
+/artifacts/thinker-apple/storyboard.html
+
+# Retired breathing study; the apple generator still uses its source artwork
+/artifacts/thinker-motion/*
+!/artifacts/thinker-motion/source.txt
