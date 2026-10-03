@@ -11,6 +11,29 @@ sfw pnpm dev
 
 Use `sfw pnpm` for this project.
 
+## Analytics
+
+PostHog initializes in the root `instrumentation-client.ts` file. Set these
+variables in `.env` or `.env.local`, and in your hosting provider before building:
+
+```dotenv
+NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN=your_project_token
+NEXT_PUBLIC_POSTHOG_HOST=https://us.i.posthog.com
+```
+
+Use the ingestion host for your PostHog project's region and its public project
+token, not a personal API key. Next.js includes these public values in the browser
+bundle at build time, so changing them in production requires a rebuild.
+
+Analytics stays inactive when either variable is missing. When configured,
+PostHog captures page views, client-side route changes, and interactions
+automatically. Visitors remain anonymous unless explicitly identified; session
+recording is disabled.
+
+To verify delivery, open the site, navigate to a thought, click a link, and check
+PostHog's activity feed for the resulting events. Development visits also send
+events when these variables are configured.
+
 ## Thinker animation
 
 On desktop (1024 px and wider), the landing page plays the approved 11.6-second
