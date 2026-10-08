@@ -3,15 +3,15 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
-import { SectionProvider, useSection } from "../context/SectionContext";
+import SiteNav from "./site-nav";
 
-function LayoutContent({ children }: { children: ReactNode }) {
+export default function SiteShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
-  const { currentSection, setCurrentSection } = useSection();
+  const isBlogPost = pathname.startsWith("/thoughts/");
 
   const getPageName = () => {
-    if (pathname === "/") return currentSection;
-    const name = pathname.slice(1);
+    if (pathname === "/") return "Home";
+    const name = pathname.split("/").filter(Boolean).at(-1) ?? "Home";
     return name.charAt(0).toUpperCase() + name.slice(1);
   };
 
@@ -23,17 +23,14 @@ function LayoutContent({ children }: { children: ReactNode }) {
       <div className="mx-auto flex max-w-6xl items-start justify-center gap-16 px-6 py-16 md:py-24">
         <main className="w-full max-w-3xl">
           <header className="mb-12">
-            <Link
-              href="/"
-              className="text-lg font-medium"
-              onClick={() => setCurrentSection("Home")}
-            >
+            <Link href="/" className="text-lg font-medium">
               [ Mihir Sahu ]
             </Link>
             <p className="text-gray-600">Builder</p>
             <div className="mt-1 flex flex-wrap items-center gap-3">
               <a
                 href="https://x.com/TheMihirSahu"
+                aria-label="X profile"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-500 transition-colors hover:text-foreground"
@@ -49,6 +46,7 @@ function LayoutContent({ children }: { children: ReactNode }) {
               </a>
               <a
                 href="https://www.linkedin.com/in/the-mihir-sahu/"
+                aria-label="LinkedIn profile"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-500 transition-colors hover:text-foreground"
@@ -64,6 +62,7 @@ function LayoutContent({ children }: { children: ReactNode }) {
               </a>
               <a
                 href="https://github.com/mihirsahu"
+                aria-label="GitHub profile"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-500 transition-colors hover:text-foreground"
@@ -112,52 +111,16 @@ function LayoutContent({ children }: { children: ReactNode }) {
               </a>
             </div>
 
-            {currentSection !== "Home" && pathname === "/" && (
-              <div className="flex flex-col justify-between pt-5 md:flex-row">
-                <div
-                  className="cursor-pointer"
-                  onClick={() => setCurrentSection("About")}
-                >
-                  [ About ]
-                </div>
-                <div
-                  className="cursor-pointer"
-                  onClick={() => setCurrentSection("Thoughts")}
-                >
-                  [ Thoughts ]
-                </div>
-                <div
-                  className="cursor-pointer"
-                  onClick={() => setCurrentSection("Builds")}
-                >
-                  [ Builds ]
-                </div>
-                {/* <div
-                  className="cursor-pointer"
-                  onClick={() => setCurrentSection("Library")}
-                >
-                  [ Library ]
-                </div> */}
-                <div
-                  className="cursor-pointer"
-                  onClick={() => setCurrentSection("Tools")}
-                >
-                  [ Tools ]
-                </div>
-              </div>
+            {pathname !== "/" && !isBlogPost && (
+              <SiteNav
+                pathname={pathname}
+                className="flex flex-col justify-between pt-5 md:flex-row"
+              />
             )}
           </header>
           {children}
         </main>
       </div>
     </div>
-  );
-}
-
-export default function SiteShell({ children }: { children: ReactNode }) {
-  return (
-    <SectionProvider>
-      <LayoutContent>{children}</LayoutContent>
-    </SectionProvider>
   );
 }

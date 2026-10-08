@@ -45,7 +45,7 @@ const BuildTemplate = ({ name, description, url, status }: BuildProps) => {
 
 const Builds = () => {
   return (
-    <Section title="Builds">
+    <Section title="Builds" headingLevel={1}>
       <div className="flex flex-col">
         <BuildTemplate
           name="Grok Vault"

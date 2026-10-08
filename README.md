@@ -11,6 +11,42 @@ sfw pnpm dev
 
 Use `sfw pnpm` for this project.
 
+## SEO and publishing
+
+About, Thoughts, Builds, and Tools have their own prerendered routes. Section
+navigation and the sitemap share `siteSections` in `app/site-metadata.ts`, which
+also supplies page descriptions and canonical URLs. Each published page has one
+H1. The Craft essay includes a linked author byline and publication date.
+
+Only entries marked `published: true` in `app/thoughts/thoughts-data.ts` appear in
+the Thoughts index, sitemap, and RSS feed. Agency and Monsters remain accessible
+at their existing URLs but are not listed as published essays. Review their
+publication and indexing status before promoting them. For a new essay, add its
+route and metadata, register its actual publication date, and link its author to
+`/about`.
+
+Craft reads its entry independently of the published list. Marking it unpublished
+keeps its route accessible with `noindex`, an In progress label, and no publication
+date; removing its entry returns a 404. Run `sfw pnpm test` to verify published,
+draft, and missing-entry behavior and publication filtering.
+
+After deploying:
+
+1. Open Google Search Console and add the `mihirsahu.sh` Domain property (or use
+   your existing verified property). Verify ownership using Google's DNS TXT
+   record at your DNS provider; keep the record in place.
+2. In Sitemaps, submit `https://www.mihirsahu.sh/sitemap.xml`.
+3. Inspect the homepage and the new routes with URL Inspection. Run a live test
+   and request indexing for the key pages if needed.
+4. Review Page indexing, Performance, and Core Web Vitals once data is available.
+   Sitemap submission and indexing requests do not guarantee indexing or ranking.
+5. In hosting settings, prefer permanent redirects directly to
+   `https://www.mihirsahu.sh`, preserving paths and query strings. The domain
+   redirects are managed outside this repository.
+
+Add relevant links to this site from your profiles, GitHub READMEs, and project
+sites. Use PageSpeed Insights after deployment to measure mobile performance.
+
 ## Analytics
 
 PostHog initializes in the root `instrumentation-client.ts` file. Set these

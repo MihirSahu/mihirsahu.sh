@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { buildSiteUrl } from "./site-metadata";
+import { buildSiteUrl, siteSections } from "./site-metadata";
 import { getPublishedThoughts } from "./thoughts/thoughts-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: buildSiteUrl("/"),
     },
+    ...siteSections.map(({ href }) => ({ url: buildSiteUrl(href) })),
     ...publishedThoughts,
   ];
 }

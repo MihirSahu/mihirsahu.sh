@@ -18,14 +18,14 @@ function WorksTemplate({ title, description }: WorksProps) {
 const About = () => {
   return (
     <>
-      <Section title="About">
+      <Section title="About" headingLevel={1}>
         <div className="space-y-5 mb-8">
           <p className="leading-relaxed text-gray-900">
             I&apos;m a builder, tinkerer, and learner. I find joy in coming across
             new ideas, meeting exceptional people, and making an impact.
           </p>
           <p className="leading-relaxed text-gray-900">
-            I want to to help founders build well-crafted products that inspire
+            I want to help founders build well-crafted products that inspire
             people and create companies that make an outsized impact on the
             world.
           </p>

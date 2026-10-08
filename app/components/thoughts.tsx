@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { thoughts } from "../thoughts/thoughts-data";
+import { getPublishedThoughts } from "../thoughts/thoughts-data";
 import Section from "./section";
 
 interface ThoughtsProps {
@@ -26,9 +26,9 @@ function ThoughtsTemplate({ href, title, published }: ThoughtsProps) {
 
 const Thoughts = () => {
   return (
-    <Section title="Thoughts">
+    <Section title="Thoughts" headingLevel={1}>
       <div className="flex flex-col">
-        {thoughts.map((thought) => (
+        {getPublishedThoughts().map((thought) => (
           <ThoughtsTemplate
             key={thought.slug}
             title={thought.title}
