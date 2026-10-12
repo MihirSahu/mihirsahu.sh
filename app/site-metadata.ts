@@ -41,13 +41,29 @@ export function buildSiteUrl(path = "/") {
   return `${siteUrl}${path.startsWith("/") ? path : `/${path}`}`;
 }
 
+export type PagePreviewImage = {
+  path: string;
+  alt: string;
+  width?: number;
+  height?: number;
+};
+
 export function createPageMetadata(
   title: string,
   description: string,
   path: string,
+  image?: PagePreviewImage,
 ): Metadata {
   const url = buildSiteUrl(path);
   const fullTitle = path === "/" ? siteName : `${title} | ${siteName}`;
+  const previewImage = image
+    ? {
+        url: buildSiteUrl(image.path),
+        alt: image.alt,
+        width: image.width,
+        height: image.height,
+      }
+    : { url: buildSiteUrl("/opengraph-image.png"), alt: siteName };
 
   return {
     title: path === "/" ? { absolute: siteName } : title,
@@ -62,14 +78,14 @@ export function createPageMetadata(
       description,
       siteName,
       type: "website",
-      images: [{ url: buildSiteUrl("/opengraph-image.png"), alt: siteName }],
+      images: [previewImage],
     },
     twitter: {
       card: "summary_large_image",
       creator: twitterHandle,
       title: fullTitle,
       description,
-      images: [buildSiteUrl("/opengraph-image.png")],
+      images: [previewImage],
     },
   };
 }

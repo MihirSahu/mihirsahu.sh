@@ -30,6 +30,23 @@ keeps its route accessible with `noindex`, an In progress label, and no publicat
 date; removing its entry returns a 404. Run `sfw pnpm test` to verify published,
 draft, and missing-entry behavior and publication filtering.
 
+Each published essay has a `preview` entry in `app/thoughts/thoughts-data.ts`.
+Its title, preview description, image URL, dimensions, and alt text supply both
+Open Graph and Twitter Card metadata. The preview artwork points to the essay's
+existing SVG ASCII component. Builds regenerate the 1200 × 630 PNG cards in
+`public/essay-previews`, using local artwork and fonts with no network requests.
+
+To regenerate just the cards after editing an essay or its artwork:
+
+```bash
+sfw pnpm previews:essays
+```
+
+For a new essay, include its preview description, artwork component path relative
+to `app/thoughts`, and image path under `/essay-previews/`. Other site pages keep
+the site-wide preview image. Deploy the updated pages and PNGs together before
+sharing the public links.
+
 After deploying:
 
 1. Open Google Search Console and add the `mihirsahu.sh` Domain property (or use

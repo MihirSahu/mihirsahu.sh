@@ -11,9 +11,6 @@ const paragraphs = [
   "Craft is inspiration. It's an act of love. Just as those who came before us passionately built cathedrals that now leave us in awe, the products we build will show other craftsmen what's possible. Our craft will blend with that of others and develop the taste of the next craftsman. And after all, taste is what makes us human.",
 ];
 
-const description =
-  "Mihir Sahu reflects on product craft: how thoughtful design, functionality, and feel shape software and inspire the people who build it.";
-
 function getCraftThought() {
   const thought = thoughts.find(({ slug }) => slug === "craft");
   if (!thought) notFound();
@@ -22,7 +19,12 @@ function getCraftThought() {
 
 export function generateMetadata(): Metadata {
   const thought = getCraftThought();
-  const pageMetadata = createPageMetadata(thought.title, description, thought.href);
+  const pageMetadata = createPageMetadata(
+    thought.title,
+    thought.preview.description,
+    thought.href,
+    thought.preview.image,
+  );
 
   return {
     ...pageMetadata,

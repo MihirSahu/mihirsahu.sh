@@ -37,6 +37,15 @@ const craft = {
   href: "/thoughts/craft",
   title: "Craft",
   description: "An essay about product craft.",
+  preview: {
+    description: "Thoughtful design, functionality, and feel shape software.",
+    image: {
+      path: "/essay-previews/craft.png",
+      alt: "Craft by Mihir Sahu, illustrated with Mona Lisa ASCII art",
+      width: 1200,
+      height: 630,
+    },
+  },
   published: true,
   publishedAt: "2026-05-01",
 };
@@ -62,6 +71,17 @@ test("published Craft retains its metadata, author, and publication date", () =>
   assert.equal(result.openGraph.publishedTime, publishedAt);
   assert.equal(result.robots, undefined);
   assert.equal(result.authors[0].url, metadata.buildSiteUrl("/about"));
+  assert.equal(result.openGraph.title, "Craft | Mihir Sahu");
+  assert.equal(result.openGraph.description, craft.preview.description);
+  const image = {
+    url: metadata.buildSiteUrl(craft.preview.image.path),
+    alt: craft.preview.image.alt,
+    width: 1200,
+    height: 630,
+  };
+  assert.deepEqual(result.openGraph.images, [image]);
+  assert.deepEqual(result.twitter.images, [image]);
+  assert.equal(result.twitter.description, craft.preview.description);
   const html = renderToStaticMarkup(page.default());
   assert.match(html, new RegExp(`<time dateTime="${publishedAt}">`));
   assert.match(html, /rel="author"/);

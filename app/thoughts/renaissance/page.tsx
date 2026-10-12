@@ -16,9 +16,6 @@ const paragraphs = [
   "I wasn’t around for the nascent internet. But I suspect that it might have felt something just like this.",
 ];
 
-const description =
-  "Mihir Sahu reflects on the optimism of the early internet and a new renaissance of technology in the age of agents.";
-
 function getRenaissanceThought() {
   const thought = thoughts.find(({ slug }) => slug === "renaissance");
   if (!thought) notFound();
@@ -27,7 +24,12 @@ function getRenaissanceThought() {
 
 export function generateMetadata(): Metadata {
   const thought = getRenaissanceThought();
-  const pageMetadata = createPageMetadata(thought.title, description, thought.href);
+  const pageMetadata = createPageMetadata(
+    thought.title,
+    thought.preview.description,
+    thought.href,
+    thought.preview.image,
+  );
 
   return {
     ...pageMetadata,
