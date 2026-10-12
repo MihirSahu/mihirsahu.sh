@@ -19,6 +19,14 @@ export type ThoughtEntry = DraftThoughtEntry | PublishedThoughtEntry;
 
 export const thoughts: ReadonlyArray<ThoughtEntry> = [
   {
+    slug: "renaissance",
+    href: "/thoughts/renaissance",
+    title: "Renaissance",
+    description: "It’s a renaissance of technology.",
+    published: true,
+    publishedAt: "2026-10-11",
+  },
+  {
     slug: "craft",
     href: "/thoughts/craft",
     title: "Craft",
