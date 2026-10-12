@@ -26,7 +26,7 @@ function ThoughtsTemplate({ href, title, published }: ThoughtsProps) {
 
 const Thoughts = () => {
   return (
-    <Section title="Thoughts" headingLevel={1}>
+    <Section title="Essays" headingLevel={1}>
       <div className="flex flex-col">
         {getPublishedThoughts().map((thought) => (
           <ThoughtsTemplate

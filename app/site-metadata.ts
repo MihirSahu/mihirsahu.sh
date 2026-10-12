@@ -15,7 +15,7 @@ export const siteSections = [
   },
   {
     href: "/thoughts",
-    title: "Thoughts",
+    title: "Essays",
     description:
       "Essays by Mihir Sahu on building software, product craft, and the ideas behind thoughtful products.",
   },

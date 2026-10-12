@@ -13,13 +13,13 @@ Use `sfw pnpm` for this project.
 
 ## SEO and publishing
 
-About, Thoughts, Builds, and Tools have their own prerendered routes. Section
+About, Essays, Builds, and Tools have their own prerendered routes. Section
 navigation and the sitemap share `siteSections` in `app/site-metadata.ts`, which
 also supplies page descriptions and canonical URLs. Each published page has one
 H1. The Craft essay includes a linked author byline and publication date.
 
 Only entries marked `published: true` in `app/thoughts/thoughts-data.ts` appear in
-the Thoughts index, sitemap, and RSS feed. Agency and Monsters remain accessible
+the Essays index, sitemap, and RSS feed. Agency and Monsters remain accessible
 at their existing URLs but are not listed as published essays. Review their
 publication and indexing status before promoting them. For a new essay, add its
 route and metadata, register its actual publication date, and link its author to

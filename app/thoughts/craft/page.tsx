@@ -51,7 +51,7 @@ export default function Craft() {
         </Link>
         <span aria-hidden="true">/</span>
         <Link href="/thoughts" className="hover:text-foreground">
-          Thoughts
+          Essays
         </Link>
         <span aria-hidden="true">/</span>
         <span aria-current="page">{thought.title}</span>

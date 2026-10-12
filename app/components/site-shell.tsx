@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 import SiteNav from "./site-nav";
+import { siteSections } from "../site-metadata";
 
 export default function SiteShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
@@ -11,6 +12,8 @@ export default function SiteShell({ children }: { children: ReactNode }) {
 
   const getPageName = () => {
     if (pathname === "/") return "Home";
+    const section = siteSections.find(({ href }) => href === pathname);
+    if (section) return section.title;
     const name = pathname.split("/").filter(Boolean).at(-1) ?? "Home";
     return name.charAt(0).toUpperCase() + name.slice(1);
   };
