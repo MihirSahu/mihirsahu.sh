@@ -47,6 +47,26 @@ to `app/thoughts`, and image path under `/essay-previews/`. Other site pages kee
 the site-wide preview image. Deploy the updated pages and PNGs together before
 sharing the public links.
 
+### Animated link previews
+
+The homepage and site sections also publish `og:video` metadata pointing to
+`public/link-previews/thinker-apple.mp4`, an 11.6-second, silent 1200 × 630 H.264
+export of the existing Thinker animation. Compatible clients such as Apple
+Messages can play it inline. Playback, looping, and caching depend on the client;
+the existing PNG remains the fallback and the Twitter large-image card.
+Essays keep their own artwork and do not advertise the site-wide video.
+
+After changing `public/animations/thinker-apple.json`, regenerate the video:
+
+```bash
+sfw pnpm previews:video
+```
+
+This export requires a local `ffmpeg` with `libx264`. It preserves frame timing,
+includes the full branch, and writes a fast-start MP4 with no audio track.
+Commit the exported MP4 with metadata changes; normal builds use that file and
+do not require ffmpeg. Deploy both before testing a fresh link in Messages.
+
 After deploying:
 
 1. Open Google Search Console and add the `mihirsahu.sh` Domain property (or use

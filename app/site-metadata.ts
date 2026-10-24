@@ -41,6 +41,14 @@ export function buildSiteUrl(path = "/") {
   return `${siteUrl}${path.startsWith("/") ? path : `/${path}`}`;
 }
 
+export const sitePreviewVideo = {
+  url: buildSiteUrl("/link-previews/thinker-apple.mp4"),
+  secureUrl: buildSiteUrl("/link-previews/thinker-apple.mp4"),
+  type: "video/mp4",
+  width: 1200,
+  height: 630,
+};
+
 export type PagePreviewImage = {
   path: string;
   alt: string;
@@ -79,6 +87,8 @@ export function createPageMetadata(
       siteName,
       type: "website",
       images: [previewImage],
+      // A custom image belongs to that page's artwork, not the site-wide Thinker.
+      videos: image ? [] : [sitePreviewVideo],
     },
     twitter: {
       card: "summary_large_image",

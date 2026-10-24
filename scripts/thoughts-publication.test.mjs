@@ -53,6 +53,22 @@ const { publishedAt, ...draftFields } = craft;
 const draft = { ...draftFields, published: false };
 const metadata = loadSource("app/site-metadata.ts");
 
+test("site pages advertise a downloadable video alongside the static fallback", () => {
+  for (const path of ["/", ...metadata.siteSections.map(({ href }) => href)]) {
+    const result = metadata.createPageMetadata("Page", "Description", path);
+    assert.deepEqual(result.openGraph.videos, [{
+      url: "https://www.mihirsahu.sh/link-previews/thinker-apple.mp4",
+      secureUrl: "https://www.mihirsahu.sh/link-previews/thinker-apple.mp4",
+      type: "video/mp4",
+      width: 1200,
+      height: 630,
+    }]);
+    assert.equal(result.openGraph.images[0].url, metadata.buildSiteUrl("/opengraph-image.png"));
+    assert.equal(result.twitter.card, "summary_large_image");
+    assert.deepEqual(result.twitter.images, result.openGraph.images);
+  }
+});
+
 function modules(entries) {
   const data = loadSource("app/thoughts/thoughts-data.ts");
   data.thoughts = entries;
@@ -80,6 +96,7 @@ test("published Craft retains its metadata, author, and publication date", () =>
     height: 630,
   };
   assert.deepEqual(result.openGraph.images, [image]);
+  assert.deepEqual(result.openGraph.videos, []);
   assert.deepEqual(result.twitter.images, [image]);
   assert.equal(result.twitter.description, craft.preview.description);
   const html = renderToStaticMarkup(page.default());

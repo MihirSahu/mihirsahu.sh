@@ -7,6 +7,7 @@ import {
   buildSiteUrl,
   siteDescription,
   siteName,
+  sitePreviewVideo,
   siteUrl,
   twitterHandle,
 } from "./site-metadata";
@@ -54,6 +55,7 @@ export const metadata: Metadata = {
     siteName,
     title: siteName,
     description: siteDescription,
+    videos: [sitePreviewVideo],
   },
   twitter: {
     card: "summary_large_image",

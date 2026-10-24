@@ -7,6 +7,7 @@
     "dev": "next dev",
     "build": "node scripts/generate-essay-previews.mjs && next build",
     "previews:essays": "node scripts/generate-essay-previews.mjs",
+    "previews:video": "node scripts/generate-preview-video.mjs",
     "start": "next start",
     "lint": "eslint",
     "test": "node --test scripts/thoughts-publication.test.mjs"
